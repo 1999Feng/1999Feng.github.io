@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}      /*先把页面中的margin和padding给清除一下*/
+body{
+    background-color:black;/*设置整个页面的背景颜色*/
+}
+a{/*给a按钮设置基本样式*/
+    text-decoration:none ;/*先把下划线去掉*/
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%,-50%);
+    font-size: 24px;
+    background:linear-gradient(90deg,#03a9f4,#f441af,#ffeb3b,#03a9f4);
+    background-size: 400%;
+    width: 400px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;/*#fff 代表白色*/
+    border-radius: 50px;
+    z-index: 1;
+}
+a::before{
+    content: "";
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    bottom: -1px;
+    background:linear-gradient(90deg,#03a9f4,#f441af,#ffeb3b,#03a9f4);
+    border-radius: 50px;
+    filter: blur(20px);
+    z-index: -1;
+}
+a:hover::before{
+    animation: sun 8s infinite;
+}
+a:hover{
+    animation: sun 8s infinite;
+}
+@keyframes sun{
+    100%{
+        background-position: -400% 0;
+
+    }
+}
